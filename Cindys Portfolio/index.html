@@ -145,50 +145,88 @@
         }
 
         /* NEW: Enhanced Mobile Navigation Styles */
-        .mobile-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 20, 0.95);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid var(--primary);
-            z-index: 1000;
-            display: none;
-            padding: 10px 0;
-            box-shadow: 0 -5px 20px rgba(0, 212, 255, 0.2);
-        }
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--primary);
+    z-index: 1000;
+    display: none;
+    padding: 8px 0;
+    box-shadow: 0 -5px 20px rgba(0, 212, 255, 0.2);
+}
 
-        .mobile-nav-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+.mobile-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
 
-        .mobile-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 10px;
-            min-width: 60px;
-        }
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 8px;
+    border-radius: 8px;
+    min-width: 50px;
+    flex: 1;
+    max-width: 20%;
+}
 
-        .mobile-nav-item i {
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-            transition: all 0.3s ease;
-        }
+.mobile-nav-item i {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    transition: all 0.3s ease;
+}
 
-        .mobile-nav-item span {
-            font-size: 0.7rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
+.mobile-nav-item span {
+    font-size: 0.65rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.mobile-nav-item.active {
+    color: var(--primary);
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.mobile-nav-item.active i {
+    text-shadow: 0 0 8px var(--primary);
+}
+
+.mobile-nav-item:not(.active):hover {
+    color: var(--accent);
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 360px) {
+    .mobile-nav-container {
+        padding: 0 5px;
+    }
+    
+    .mobile-nav-item {
+        padding: 4px 6px;
+        min-width: 45px;
+    }
+    
+    .mobile-nav-item i {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-nav-item span {
+        font-size: 0.6rem;
+    }
+}
 
         .mobile-nav-item.active {
             color: var(--primary);
@@ -1633,6 +1671,7 @@
                 }
             }
         }
+        
 
         @media (max-width: 480px) {
             .project-card {
@@ -1950,7 +1989,7 @@ I'm still exploring the fields of data analysis and business intelligence, learn
                             <div class="mission-content">
                                 <div class="log-entry" style="animation-delay: 2s">
                                     <div class="log-prompt">> OVERVIEW:</div>
-                                    <div class="log-message">Developing <span class="highlight">Web applications</span>from first year to present, continuously enhancing skills in both front-end and back-end technologies.</div>
+                                    <div class="log-message">Developing <span class="highlight">Web applications</span> from first year to present, continuously enhancing skills in both front-end and back-end technologies.</div>
                                 </div>
                                 
                                 <div class="log-entry" style="animation-delay: 2.5s">
@@ -2231,142 +2270,172 @@ I'm still exploring the fields of data analysis and business intelligence, learn
             </div>
         </section>
 
-        <!-- Projects Section with Horizontal Scroll - FIXED: Centered on mobile -->
-        <section id="projects" class="py-16">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-blue mb-12 text-center animate-header">FEATURED_PROJECTS</h2>
-                
-                <!-- Horizontal Scrollable Projects -->
-                <div class="projects-container">
-                    <div class="projects-scroll" id="projects-scroll">
-                        <!-- Project 1 -->
-                        <div class="project-card animate-on-scroll">
-                            <div class="project-image-container">
-                                <img src="image.png" 
-                                     alt="Mabini Travel Guide" 
-                                     class="project-image">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Mabini Travel Guide</h3>
-                                <p class="project-description">
-                                    A visually captivating tourism site designed to spark curiosity and inspire exploration across Mabini, Batangas.
-                                </p>
-                                <!-- Tech Tags for Project 1 -->
-                                <div class="tech-tags">
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/Cindy5913/Mabini-Tourism.git" class="project-link">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                    <a href="https://mabini-tourism-chi.vercel.app/" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i> Demo
-                                    </a>
-                                </div>
-                            </div>
+       <!-- Projects Section with Horizontal Scroll - FIXED: Centered on mobile -->
+<section id="projects" class="py-16">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-orbitron text-cyber-blue mb-12 text-center animate-header">FEATURED_PROJECTS</h2>
+        
+        <!-- Horizontal Scrollable Projects -->
+        <div class="projects-container">
+            <div class="projects-scroll" id="projects-scroll">
+                <!-- Project 1 -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="image.png" 
+                             alt="Mabini Travel Guide" 
+                             class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mabini Travel Guide</h3>
+                        <p class="project-description">
+                            A visually captivating tourism site designed to spark curiosity and inspire exploration across Mabini, Batangas.
+                        </p>
+                        <!-- Tech Tags for Project 1 -->
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
-                        
-                        <!-- Project 2 -->
-                        <div class="project-card animate-on-scroll">
-                            <div class="project-image-container">
-                                <img src="oauthpicture.png" 
-                                     alt="CloudAir" 
-                                     class="project-image">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">CloudAir</h3>
-                                <p class="project-description">
-                                    A visually engaging flight portal with Google authentication - designed to inspire digital travel innovation.
-                                </p>
-                                <!-- Tech Tags for Project 2 -->
-                                <div class="tech-tags">
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">G-Cloud</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/Cindy5913/Oauth-Project-Latest.git" class="project-link">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Project 3 -->
-                        <div class="project-card animate-on-scroll">
-                            <div class="project-image-container">
-                                <img src="Screenshot 2025-10-11 210906.png" 
-                                     alt="Brew & Bliss" 
-                                     class="project-image">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Brew & Bliss</h3>
-                                <p class="project-description">
-                                    A cozy and interactive coffee shop website crafted to showcase brews, flavors, and a warm digital café vibe.
-                                </p>
-                                <!-- Tech Tags for Project 3 -->
-                                <div class="tech-tags">
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/Cindy5913/Coffee-Shop.git" class="project-link">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                    <a href="https://coffee-shop-nu-orcin.vercel.app/" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i> Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Project 4 -->
-                        <div class="project-card animate-on-scroll">
-                            <div class="project-image-container">
-                                <img src="bankacc.png" 
-                                     alt="SmartBank" 
-                                     class="project-image">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">SmartBank</h3>
-                                <p class="project-description">
-                                    A responsive online banking platform for seamless money management with Gmail notifications and secure transactions.
-                                </p>
-                                <!-- Tech Tags for Project 4 -->
-                                <div class="tech-tags">
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">PHPMailer</span>
-                                    <span class="tech-tag">SQL</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/Cindy5913/Bank-Account-System.git" class="project-link">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Cindy5913/Mabini-Tourism.git" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://mabini-tourism-chi.vercel.app/" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
                         </div>
                     </div>
-                    
-                    <!-- Scroll Navigation -->
-                    <div class="scroll-nav">
-                        <button class="scroll-btn animate-on-scroll" id="scroll-left">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="scroll-btn animate-on-scroll" id="scroll-right">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="oauthpicture.png" 
+                             alt="CloudAir" 
+                             class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CloudAir</h3>
+                        <p class="project-description">
+                            A visually engaging flight portal with Google authentication - designed to inspire digital travel innovation.
+                        </p>
+                        <!-- Tech Tags for Project 2 -->
+                        <div class="tech-tags">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">G-Cloud</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Cindy5913/Oauth-Project-Latest.git" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="Screenshot 2025-10-11 210906.png" 
+                             alt="Brew & Bliss" 
+                             class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Brew & Bliss</h3>
+                        <p class="project-description">
+                            A cozy and interactive coffee shop website crafted to showcase brews, flavors, and a warm digital café vibe.
+                        </p>
+                        <!-- Tech Tags for Project 3 -->
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Cindy5913/Coffee-Shop.git" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://coffee-shop-nu-orcin.vercel.app/" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="bankacc.png" 
+                             alt="SmartBank" 
+                             class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SmartBank</h3>
+                        <p class="project-description">
+                            A responsive online banking platform for seamless money management with Gmail notifications and secure transactions.
+                        </p>
+                        <!-- Tech Tags for Project 4 -->
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">PHPMailer</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Cindy5913/Bank-Account-System.git" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: E-commerce Website -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="ecommerce(image).png" 
+                             alt="E-commerce Website" 
+                             class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Store</h3>
+                        <p class="project-description">
+                            A modern, responsive e-commerce platform with product catalog, shopping cart, and user-friendly interface for seamless online shopping.
+                        </p>
+                        <!-- Tech Tags for E-commerce Project -->
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                           
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Cindy5913/Coastcrave-.git" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://coastcrave.vercel.app/" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- Scroll Navigation -->
+            <div class="scroll-nav">
+                <button class="scroll-btn animate-on-scroll" id="scroll-left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-btn animate-on-scroll" id="scroll-right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Contact Section with Auto-Scrolling Cards - FIXED: Centered on mobile -->
         <section id="contact" class="py-16">
